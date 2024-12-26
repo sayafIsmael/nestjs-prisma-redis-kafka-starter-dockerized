@@ -1,0 +1,39 @@
+global:
+  scrape_interval: 30s  # Increased scrape interval to 30 seconds (you can adjust this further if needed)
+
+scrape_configs:
+  # NestJS backend service
+  - job_name: 'nestjs-backend'
+    static_configs:
+      - targets: ['app:3000']  # The service and port of your NestJS app
+
+  # Kafka service
+  # - job_name: 'kafka'
+  #   static_configs:
+  #     - targets: ['kafka:9092']  # Kafka container
+  #   metric_relabel_configs:
+  #     - source_labels: [__name__]
+  #       regex: 'kafka.*'
+  #       action: keep  # Keep only specific Kafka metrics, adjust regex as needed
+
+  # Redis service
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis:6379']  # Redis container
+
+  # PostgreSQL service
+  - job_name: 'postgresql'
+    static_configs:
+      - targets: ['postgres:5432']  # PostgreSQL container
+
+  # Elasticsearch service
+  - job_name: 'elasticsearch'
+    static_configs:
+      - targets: ['elasticsearch:9200']  # Elasticsearch container
+
+  # Prometheus service itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['prometheus:9090']  # Prometheus itself
+
+# Additional options to configure the scraping behavior can be added here as necessary.

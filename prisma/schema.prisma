@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String       @id @default(cuid())
+  email        String       @unique
+  password     String?
+  name         String?
+  refreshToken String?
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  authProvider AuthProvider @default(LOCAL)
+  roleId       String
+  role         Role         @relation(fields: [roleId], references: [id])
+}
+
+enum AuthProvider {
+  LOCAL
+  GOOGLE
+}
+
+model Role {
+  id          String       @id @default(cuid())
+  name        String       @unique
+  slug        String       @unique
+  permissions Permission[]
+  users       User[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  canDelete   Boolean      @default(true)
+  canUpdate   Boolean      @default(true)
+}
+
+model Permission {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  slug        String   @unique
+  description String?
+  roles       Role[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
