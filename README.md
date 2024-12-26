@@ -100,7 +100,8 @@ $ npm run test:cov
 ```
 ## Swagger API Documentation
 <p>Visit <span><a href="http://localhost:8080/docs">http://localhost:8080/docs</a></span> to access the swagger API Documentation</p>
-![image](https://github.com/user-attachments/assets/a0db7114-459e-44b9-92ac-57f1b59bcf57)
+![image](https://github.com/user-attachments/assets/d5f8545f-def3-4794-b465-303d9e4a9875)
+
 
 
 ## Deployment
