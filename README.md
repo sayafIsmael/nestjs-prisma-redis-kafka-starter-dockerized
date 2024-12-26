@@ -86,6 +86,10 @@ $ npm run start:prod
 The app will start on port 8080
 </p>
 
+## Swagger API Documentation
+<p>Visit <span><a href="http://localhost:8080/docs">http://localhost:8080/docs</a></span> to access the swagger API Documentation</p>
+![image](https://github.com/user-attachments/assets/d5f8545f-def3-4794-b465-303d9e4a9875)
+
 ## Run tests
 
 ```bash
@@ -98,10 +102,6 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-## Swagger API Documentation
-<p>Visit <span><a href="http://localhost:8080/docs">http://localhost:8080/docs</a></span> to access the swagger API Documentation</p>
-![image](https://github.com/user-attachments/assets/d5f8545f-def3-4794-b465-303d9e4a9875)
-
 
 
 ## Deployment
