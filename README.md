@@ -38,7 +38,7 @@ A comprehensive NestJS starter kit designed for building scalable, secure, and m
 ```bash
 # Clone the Repository
 $ git clone https://github.com/sayafIsmael/nestjs-prisma-starter-redis-kafka-dockerized.git
-$ cd nestjs-prisma-redis-kafka-starter-dockerized
+$ cd nestjs-prisma-starter-redis-kafka-dockerized
 
 #Install node modules
 $ npm install
